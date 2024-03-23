@@ -9,6 +9,8 @@ config.autoAddCss = false
 
 import { ThemeProvider } from "@/components/theme-provider"
 
+import NavigationBar from "@/components/navigation-bar";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,6 +27,7 @@ export default function RootLayout({
                 defaultTheme="system"
                 disableTransitionOnChange={true}
             >
+                <NavigationBar />
                 {children}
             </ThemeProvider>
         </body>
