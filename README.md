@@ -1,1 +1,1 @@
-# HooHacks2024-Projects
+# HooStocks
