@@ -117,25 +117,25 @@ export default function NavigationBar() {
     }
 
     return (
-       <nav className={(isSolid ? "border-0 border-transparent rounded-md shadow-gray-800 bg-background bg-opacity-40" : "" ) + "px-12 transition-all duration-300 fixed top-0 z-20 pt-2 pb-3 w-full overflow-hidden"}>
+       <nav className={(isSolid ? "shadow-gray-800 bg-neutral-200 dark:bg-neutral-900 bg-opacity-60 " : "" ) + "px-12 transition-all duration-300 fixed top-0 z-20 pt-2 pb-3 w-full overflow-hidden"}>
             <div className="grid mt-3 grid-cols-2 lg:grid-cols-4">
                 <div className="inline-flex mt-2">
                     <Link href="/" className="inline-flex">
-                        <Image src="/hoohacks-owl-logo.png" alt="HooHacks" width={40} height={40} className="mr-2"/>
-                        <h1 className="text-2xl font-semibold">HooStocks</h1>
+                        <Image src="/hoohacks-owl-logo.png" alt="HooHacks" width={40} height={40} className="mr-2 bg-black dark:bg-transparent px-2 py-2 rounded-md"/>
+                        <h1 className="text-2xl font-semibold px-2 py-1">HooStocks</h1>
                     </Link>
                 </div>
-                <div className="hidden text-center mt-2 col-span-2 lg:visible lg:flex justify-evenly"> 
+                <div className="hidden text-center mt-2 col-span-2 py-1 lg:visible lg:flex justify-evenly"> 
                     {
                         menuItems.map((item, index) => (
                             <LargeMenu item={item} key={index} />
                         ))
                     }
                 </div>
-                <div className="lg:hidden inline-flex justify-end">
+                <div className="lg:hidden inline-flex justify-end mt-2 py-1">
                    <MobileSheet/> 
                 </div>
-                <div className="hidden lg:inline-flex gap-2 justify-end">
+                <div className="hidden lg:inline-flex gap-2 justify-end mt-2 py-1">
                         <Button>
                             Login
                         </Button>
