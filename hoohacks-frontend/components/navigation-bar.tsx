@@ -60,7 +60,7 @@ export default function NavigationBar() {
        <nav className="px-12 relative pt-2 pb-3 w-full overflow-hidden">
             <div className="grid mt-3 grid-cols-2 lg:grid-cols-6">
                 <div className="inline-flex mt-2">
-                    <Link href="/">
+                    <Link href="/" className="inline-flex">
                         <Image src="/hoohacks-owl-logo.png" alt="HooHacks" width={40} height={40} className="mr-2"/>
                         <h1 className="text-2xl font-semibold">HooStocks</h1>
                     </Link>
