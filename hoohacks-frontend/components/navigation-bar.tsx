@@ -21,8 +21,28 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 
+import { useEffect, useState } from "react";
+
 export default function NavigationBar() {
     const pathname = usePathname();
+    
+    const [ isSolid, setIsSolid ] = useState(false);
+
+    function toggleVisability() {
+        if( window.scrollY > 300 ) {
+            setIsSolid(true);
+        } else {
+            setIsSolid(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", toggleVisability);
+
+        return () => {
+            window.removeEventListener("scroll", toggleVisability);
+        }
+    }, [])
 
     const menuItems: {
         name: string;
@@ -97,7 +117,7 @@ export default function NavigationBar() {
     }
 
     return (
-       <nav className="px-12 relative pt-2 pb-3 w-full overflow-hidden">
+       <nav className={(isSolid ? "border-0 border-transparent rounded-md shadow-gray-800 bg-background bg-opacity-40" : "" ) + "px-12 transition-all duration-300 fixed top-0 z-20 pt-2 pb-3 w-full overflow-hidden"}>
             <div className="grid mt-3 grid-cols-2 lg:grid-cols-4">
                 <div className="inline-flex mt-2">
                     <Link href="/" className="inline-flex">
