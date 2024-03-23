@@ -38,13 +38,9 @@ export default function NavigationBar() {
             path: "/about",
             isActive: () => pathname === "/about",
         }, {
-            name: "Contact",
-            path: "/contact",
+            name: "Pricing",
+            path: "/pricing",
             isActive: () => pathname === "/contact",
-        }, {
-            name: "Blog",
-            path: "/blog",
-            isActive: () => pathname === "/blog",
         }
     ]
 
@@ -102,14 +98,14 @@ export default function NavigationBar() {
 
     return (
        <nav className="px-12 relative pt-2 pb-3 w-full overflow-hidden">
-            <div className="grid mt-3 grid-cols-2 lg:grid-cols-6">
+            <div className="grid mt-3 grid-cols-2 lg:grid-cols-4">
                 <div className="inline-flex mt-2">
                     <Link href="/" className="inline-flex">
                         <Image src="/hoohacks-owl-logo.png" alt="HooHacks" width={40} height={40} className="mr-2"/>
                         <h1 className="text-2xl font-semibold">HooStocks</h1>
                     </Link>
                 </div>
-                <div className="hidden text-center mt-2 col-span-4 lg:visible lg:flex justify-evenly"> 
+                <div className="hidden text-center mt-2 col-span-2 lg:visible lg:flex justify-evenly"> 
                     {
                         menuItems.map((item, index) => (
                             <LargeMenu item={item} key={index} />
