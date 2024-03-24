@@ -24,7 +24,7 @@ export default function Home() {
         <AuroraBorealis>
             <div className="grid justify-items-center">
                 <h1 className="text-7xl text-primary">HooStocks</h1>
-                <p className="text-2xl text-[#9e9e9e] dark:text-[#dfe9e9]">The future of investing is here.</p>
+                <p className="text-2xl text-[#9e9e9e] dark:text-[#dfe9e9]">stock analysis platform</p>
             </div>         
         </AuroraBorealis>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 px-6 lg:px-12 py-6 lg:py-12">
