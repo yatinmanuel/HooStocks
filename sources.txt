@@ -1,0 +1,25 @@
+Sources
+
+
+
+Front-End
+
+React.js (Front-End Framework)
+Tailwind CSS (Styling Framework)
+shadcn/ui (UI Elements and Library)
+Next.js (Meta-framework)
+
+
+
+Back-End
+
+Express.js (Handlers and API Calling)
+Mongoose (Authentication)
+MongoDB (Database)
+
+
+
+APIs
+
+OpenAI (Generative Text and Stock Analysis)
+polygon.io (Requesting Stock Information)
