@@ -13,6 +13,7 @@ import {
 import axios from "axios";
 
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function Dashboard() {
         
@@ -29,14 +30,30 @@ export default function Dashboard() {
 
     }
 
+
     useEffect(() => {
         GetStock('AAPL');
+        console.log("running")
     }, []);
 
     return (
         <>
             <NavUser />
             <main className="h-screen mt-12 px-6 py-6 lg:py-12 lg:px-12">
+                    <form className="w-full inline-flex gap-4">
+                        <input id="stock" type="text" className="w-full p-2 border-2 border-gray-300 rounded-lg" 
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            let stock = document.getElementById('stock') as HTMLInputElement;
+                            GetStock(stock.value);
+                        }}
+                        placeholder="Search for a stock shortname" />
+                        <Button onClick={(e) => {
+                            e.preventDefault();
+                            let stock = document.getElementById('stock') as HTMLInputElement;
+                            GetStock(stock.value);}
+                        }>Search</Button>
+                    </form>
                 <div className="my-4">
                     <h1 className="font-bold text-4xl ">Dashboard</h1>
                 </div>
