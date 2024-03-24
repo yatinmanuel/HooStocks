@@ -1,3 +1,5 @@
+"use client";
+
 import NavUser from "@/components/nav-user";
 import {
     Card,
@@ -8,8 +10,28 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 
+import axios from "axios";
+
+import { useEffect, useState } from "react";
 
 export default function Dashboard() {
+        
+    const [ stock, setStock ] = useState<any>(null);
+    
+    async function GetStock(stock_short_name: string) {
+        await axios.post('http://localhost:8080/get-stock', {
+            stock_short_name: stock_short_name
+        }).then((response) => {
+            setStock(response.data);
+        }).catch((error) => {
+            console.error(error);
+        });
+
+    }
+
+    useEffect(() => {
+        GetStock('AAPL');
+    }, []);
 
     return (
         <>
@@ -24,7 +46,7 @@ export default function Dashboard() {
                                 <CardTitle>
                                     <div className="flex gap-6">
                                         <p className="font-bold text-xl">Name: </p>
-                                        <p className="text-xl text-left">name</p>
+                                        <p className="text-xl text-left">{stock ? (stock.name) : ""}</p>
                                     </div>
                                 </CardTitle>
                             </CardHeader>
@@ -34,7 +56,7 @@ export default function Dashboard() {
                                 <CardTitle>
                                     <div className="flex gap-6">
                                         <p className="font-bold text-xl">Ticker: </p>
-                                        <p className="text-xl text-left">xxxx</p>
+                                        <p className="text-xl text-left">{stock ? (stock.polygon.ticker) : "ticker"}</p>
                                     </div>
                                 </CardTitle>
                             </CardHeader>
