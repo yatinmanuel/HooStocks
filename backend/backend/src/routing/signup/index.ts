@@ -6,6 +6,8 @@ import Webserver from "../../index"
 // Package Imports
 import bcrypt from 'bcrypt';
 
+
+
 export default {
     // The path of the route
     path: '/signup',
@@ -23,8 +25,36 @@ export default {
 
         const hashedPassword = bcrypt.hash(password, 20);
 
-        // Database logic here
+        let user = client.database.User.findOne({
+            where: {
+                username: username
+            }
+        });
+
+        if (user) {
+            return res.status(400).send({ message: 'user already exists' });
+        }
+
+        user = client.database.User.findOne({
+           email: email
+        });
         
+        if (user) {
+            return res.status(400).send({ message: 'email already exists' });
+        }
+
+        client.database.User.create({
+            data: {
+                username: username,
+                password: hashedPassword,
+                email: email,
+                firstname: firstname,
+                lastname: lastname,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            }
+        });
+
         return res.status(200).send({ message: 'success' });
     },
     // eslint-disable-next-line no-unused-vars

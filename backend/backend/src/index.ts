@@ -6,6 +6,11 @@ import fs from 'fs';
 import { RouteHandler, Handler, RouteHandlerFunction } from './utils/types/HandlerTypes';
 import Jest from "jest"
 
+import { PrismaClient } from '@prisma/client';
+
+// Create a new Prisma client
+const prisma = new PrismaClient();
+
 class Webserver  {
 
     app: Express.Application;
@@ -13,6 +18,7 @@ class Webserver  {
     middlewares: Handler[];
     expressRouter: Express.Router;
     route: RouteHandler[];
+    database: PrismaClient;
 
     constructor() {
         this.app = Express();
@@ -20,6 +26,8 @@ class Webserver  {
         this.middlewares = [];
         this.expressRouter = Express.Router();
         this.route = [];
+
+        this.database = prisma;
     }
 
     handle404(req: Express.Request, res: Express.Response) {
