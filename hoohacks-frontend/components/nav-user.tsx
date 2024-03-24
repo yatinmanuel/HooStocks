@@ -57,9 +57,6 @@ export default function NavigationBar() {
         }
     }, [])
 
-
-
-
     return (
         <nav className={(isSolid ? "shadow-gray-800 bg-neutral-200 dark:bg-neutral-900 bg-opacity-20 " : "") + "px-12 transition-all duration-300 fixed top-0 z-20 pt-2 pb-3 w-full overflow-hidden"}>
             <div className="grid mt-3 mb-1 grid-cols-2 lg:grid-cols-3 w-full">
