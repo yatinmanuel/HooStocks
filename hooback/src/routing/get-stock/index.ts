@@ -23,9 +23,6 @@ export default {
             return res.status(400).send({ message: 'Missing Data' });
         }
 
-        // Date in format YYYY-MM-DD
-        const date = new Date().toISOString().split('T')[0];
-
         const api_key = process.env.API_KEY as string;
 
         const open_close_stocks = await fetch(`https://api.polygon.io/v2/aggs/ticker/${stock_short_name}/prev?adjusted=true&limit=120&apiKey=${encodeURI(api_key)}`, {
@@ -36,7 +33,7 @@ export default {
             }
         })
 
-        const current_price = await fetch(`https://api.polygon.io/v1/open-close/${stock_short_name}/${date}?adjusted=true&apiKey=${encodeURI(api_key)}`, {
+        const current_price = await fetch(`https://api.polygon.io/v1/open-close/${stock_short_name}/2024-03-22?adjusted=true&apiKey=${encodeURI(api_key)}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

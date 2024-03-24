@@ -66,7 +66,7 @@ export default function Dashboard() {
                                 <CardTitle>
                                     <div className="flex gap-6">
                                         <p className="font-bold text-xl">Current Price: </p>
-                                        <p className="text-xl text-left">$0</p>
+                                        <p className="text-xl text-left">{ stock ? (`$${stock.current_price.close}` ) : (`$0`) }</p>
                                     </div>
                                 </CardTitle>
                             </CardHeader>
@@ -79,7 +79,7 @@ export default function Dashboard() {
                                 <CardDescription className="grid justify-items-center text-center" >A letter representation calculated based on history and current performance</CardDescription>
                             </CardHeader>
                             <CardContent>
-                                <p className="grid justify-items-center text-7xl font-bold">A</p>
+                                <p className="grid justify-items-center text-7xl font-bold">{stock ? (stock.reasoning.rating) : "F"}</p>
                             </CardContent>
                         </Card>
                         <Card >
@@ -88,7 +88,7 @@ export default function Dashboard() {
                                 <CardDescription className="grid justify-items-center text-center" >Scoring reasoning</CardDescription>
                             </CardHeader>
                             <CardContent>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <p>{stock ? (stock.reasoning.justify) : "No Data"}</p>
                             </CardContent>
                         </Card>
                         <Card >
@@ -97,7 +97,7 @@ export default function Dashboard() {
                                 <CardDescription className="grid justify-items-center text-center" >A number representation calculated based on history and current performance, out of 100</CardDescription>
                             </CardHeader>
                             <CardContent>
-                                <p className="grid justify-items-center text-7xl font-bold">100</p>
+                                <p className="grid justify-items-center text-7xl font-bold">{stock ? (stock.reasoning.indexrating) : "0"}</p>
                             </CardContent>
                         </Card>
                 </div>
