@@ -1,9 +1,14 @@
-
+import NavUser from "@/components/nav-user";
 
 export default function Dashboard() {
     return (
-        <div>
-            <h1>Dashboard</h1>
-        </div>
+        <>
+            <NavUser />
+            <main>
+                <div>
+                    <h1 className="p-20">Dashboard</h1>
+                </div>
+            </main>
+        </>
     )
 }

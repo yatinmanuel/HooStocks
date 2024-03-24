@@ -8,23 +8,6 @@ export const metadata: Metadata = {
 
 import Navbar from "@/components/navigation-bar";
 
-import {
-    Table,
-    TableBody,
-    TableCaption,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow
-} from "@/components/ui/table";
-
-import {
-    Tabs,
-    TabsContent,
-    TabsList,
-    TabsTrigger
-} from "@/components/ui/tabs"
-
 import { Button } from "@/components/ui/button"
 
 import {

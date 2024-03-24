@@ -13,25 +13,36 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
+import {
+    Command,
+    CommandDialog,
+    CommandEmpty,
+    CommandGroup,
+    CommandInput,
+    CommandItem,
+    CommandList,
+    CommandSeparator,
+    CommandShortcut,
+} from "@/components/ui/command"
 
 
 import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetTitle,
-  SheetTrigger,
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetTitle,
+    SheetTrigger,
 } from "@/components/ui/sheet"
 
 import { useEffect, useState } from "react";
 
 export default function NavigationBar() {
     const pathname = usePathname();
-    
-    const [ isSolid, setIsSolid ] = useState(false);
+
+    const [isSolid, setIsSolid] = useState(false);
 
     function toggleVisability() {
-        if( window.scrollY > 300 ) {
+        if (window.scrollY > 300) {
             setIsSolid(true);
         } else {
             setIsSolid(false);
@@ -46,106 +57,65 @@ export default function NavigationBar() {
         }
     }, [])
 
-    const menuItems: {
-        name: string;
-        path: string;
-        isActive: () => boolean;
-    }[] = [
-        {
-            name: "Home",
-            path: "/",
-            isActive: () => pathname === "/",
-        }, {
-            name: "About",
-            path: "#about",
-            isActive: () => pathname === "/about",
-        }, {
-            name: "Pricing",
-            path: "#pricing",
-            isActive: () => pathname === "/contact",
-        }
-    ]
-
-    function MobileMenu({ item, key }: { item: {name: string; path: string; isActive: () => boolean;}, key: number }) {
-       return ( 
-            <li key={key}>
-                <Link href={item.path} className={(item.isActive() ? "text-bold" : "") + ""}>
-                    {item.name}
-                </Link>
-            </li>
-        )
-    }
-
-    function LargeMenu({ item, key } : { item: {name: string; path: string; isActive: () => boolean; } , key: number }) {
-        return (
-            <div key={key}>
-                <Link href={item.path} className={(item.isActive() ? "text-bold" : "") + ""}>
-                    <p>{item.name}</p>
-                </Link>
-            </div>
-        )
-    }
 
     function MobileSheet() {
-        
+
         return (
             <Sheet>
-               <SheetTrigger>
-                    <FontAwesomeIcon icon={ faBars } /> 
-               </SheetTrigger>
-               <SheetContent side={"top"}>
+                <SheetTrigger>
+                    <FontAwesomeIcon icon={faBars} />
+                </SheetTrigger>
+                <SheetContent side={"top"}>
                     <SheetTitle className="inline-flex">
-                       <Image src="/hoohacks-owl-logo.png" className="mr-2 px-2 py-2 bg-black dark:bg-transparent rounded-md" alt="Hooty-hootenson" width={45} height={40} /> 
-                       <span className="text-2xl font-semibold px-2 py-1">HooStocks</span>
+                        <Image src="/hoohacks-owl-logo.png" className="mr-2 px-2 py-2 bg-black dark:bg-transparent rounded-md" alt="Hooty-hootenson" width={45} height={40} />
+                        <span className="text-2xl font-semibold px-2 py-1">HooStocks</span>
                     </SheetTitle>
                     <SheetDescription>
                         idk, its a demo. Also it aint that colourful.
                     </SheetDescription>
                     <ul>
-                        {
-                            menuItems.map((item, index) => (
-                                <MobileMenu item={item} key={index} />
-                            ))
-                        }
+                        {/* idk what goes here */}
                     </ul>
                     <div className="px-4 py-4 relative">
-                    <div className="absolute bottom-5 right-5">
-                    <ModeToggle/>
+                        <div className="absolute bottom-5 right-5">
+                            <ModeToggle />
+                        </div>
                     </div>
-                    </div>
-               </SheetContent>
+                </SheetContent>
             </Sheet>
         )
     }
 
     return (
-       <nav className={(isSolid ? "shadow-gray-800 bg-neutral-200 dark:bg-neutral-900 bg-opacity-20 " : "" ) + "px-12 transition-all duration-300 fixed top-0 z-20 pt-2 pb-3 w-full overflow-hidden"}>
-            <div className="grid mt-3 mb-1 grid-cols-2 lg:grid-cols-4">
+        <nav className={(isSolid ? "shadow-gray-800 bg-neutral-200 dark:bg-neutral-900 bg-opacity-20 " : "") + "px-12 transition-all duration-300 fixed top-0 z-20 pt-2 pb-3 w-full overflow-hidden"}>
+            <div className="grid mt-3 mb-1 grid-cols-2 lg:grid-cols-3 w-full">
                 <div className="inline-flex my-2">
                     <Link href="/" className="inline-flex">
-                        <Image src="/hoohacks-owl-logo.png" alt="HooHacks" width={45} height={40} className="mr-2 bg-black dark:bg-transparent px-2 py-2 rounded-md"/>
+                        <Image src="/hoohacks-owl-logo.png" alt="HooHacks" width={45} height={40} className="mr-2 bg-black dark:bg-transparent px-2 py-2 rounded-md" />
                         <h1 className="text-2xl font-semibold px-2 py-1">HooStocks</h1>
                     </Link>
                 </div>
-                <div className="hidden text-center my-2 col-span-2 py-1 lg:visible lg:flex justify-evenly"> 
-                    {
-                        menuItems.map((item, index) => (
-                            <LargeMenu item={item} key={index} />
-                        ))
-                    }
+                <div className="inline-flex grid justify-items-center w-full">
+
+                    {/* HOW DO I MAKE THE COMMAND BAR THE FULL SIZE OF THE PARENT DIV */}
+
+                    <Command className="grid justify-items-center w-full">
+                        <CommandInput placeholder="Search Stock Ticker" />
+                        <CommandList></CommandList>
+                    </Command>
                 </div>
                 <div className="lg:hidden inline-flex justify-end my-2 py-1">
-                   <MobileSheet/> 
+                    <MobileSheet />
                 </div>
                 <div className="hidden lg:inline-flex gap-2 justify-end my-2 py-1">
-                <Avatar>
-                    <AvatarImage src="https://github.com/shadcn.png" />
-                    <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
+                    <Avatar>
+                        <AvatarImage src="https://github.com/shadcn.png" />
+                        <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
 
-                        <ModeToggle/> 
+                    <ModeToggle />
                 </div>
             </div>
-       </nav>
+        </nav>
     )
 }
