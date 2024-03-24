@@ -6,10 +6,7 @@ import fs from 'fs';
 import { RouteHandler, Handler, RouteHandlerFunction } from './utils/types/HandlerTypes';
 import Jest from "jest"
 
-import { PrismaClient } from '@prisma/client';
-
-// Create a new Prisma client
-const prisma = new PrismaClient();
+import mongoose from 'mongoose';
 
 class Webserver  {
 
@@ -18,7 +15,6 @@ class Webserver  {
     middlewares: Handler[];
     expressRouter: Express.Router;
     route: RouteHandler[];
-    database: PrismaClient;
 
     constructor() {
         this.app = Express();
@@ -27,7 +23,6 @@ class Webserver  {
         this.expressRouter = Express.Router();
         this.route = [];
 
-        this.database = prisma;
     }
 
     handle404(req: Express.Request, res: Express.Response) {
@@ -125,7 +120,15 @@ start() {
     }
 }
 
+const DatabaseUrl = process.env.DATABASE_URL as string;
 
-new Webserver().start();
+mongoose.connect((DatabaseUrl)).then(() => {
+    console.log('Connected to the database');
+    new Webserver().start();
+
+}).catch((error) => {
+    console.error(`Error connecting to the database: ${error}`);
+});
+
 
 export default Webserver;

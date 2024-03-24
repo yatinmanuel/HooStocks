@@ -20,9 +20,7 @@ export default {
             return res.status(400).send({ message: 'bad request' });
         }
 
-        // Database logic here
-        
-        const passwordCheck = bcrypt.compare(password, 'hashedPassword');
+        const passwordCheck = bcrypt.compare(password, "user.password");
         
         if (!passwordCheck) {
             return res.status(401).send({ message: 'wrong password' });
