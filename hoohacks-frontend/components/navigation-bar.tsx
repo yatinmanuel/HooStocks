@@ -16,7 +16,6 @@ import {
   Sheet,
   SheetContent,
   SheetDescription,
-  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
@@ -93,8 +92,8 @@ export default function NavigationBar() {
                </SheetTrigger>
                <SheetContent side={"top"}>
                     <SheetTitle className="inline-flex">
-                       <Image src="/hoohacks-owl-logo.png" className="mr-2" alt="Hooty-hootenson" width={40} height={40} /> 
-                       HooStocks
+                       <Image src="/hoohacks-owl-logo.png" className="mr-2 px-2 py-2 bg-black dark:bg-transparent rounded-md" alt="Hooty-hootenson" width={45} height={40} /> 
+                       <span className="text-2xl font-semibold px-2 py-1">HooStocks</span>
                     </SheetTitle>
                     <SheetDescription>
                         idk, its a demo. Also it aint that colourful.
@@ -136,12 +135,16 @@ export default function NavigationBar() {
                    <MobileSheet/> 
                 </div>
                 <div className="hidden lg:inline-flex gap-2 justify-end my-2 py-1">
-                        <Button>
-                            Login
-                        </Button>
-                        <Button variant="outline">
-                            Sign-up
-                        </Button>
+                        <Link href="/login">
+                            <Button>
+                                Login
+                            </Button>
+                        </Link>
+                        <Link href="/signup">
+                            <Button variant="outline">
+                                Sign-up
+                            </Button>
+                        </Link>
                         <ModeToggle/> 
                 </div>
             </div>
