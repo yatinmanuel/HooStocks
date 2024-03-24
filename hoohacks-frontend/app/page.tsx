@@ -47,11 +47,11 @@ export default function Home() {
                         </Card>
                         <Card>
                             <CardHeader>
-                                <CardTitle>Simple Dashboard</CardTitle>
-                                <CardDescription>elegant and minimal for easy control</CardDescription>
+                                <CardTitle>Unlimited API Calls</CardTitle>
+                                <CardDescription>Zero-Interuptions</CardDescription>
                             </CardHeader>
                             <CardContent>
-                                With a straight forward dashboard and everything you need to know about your stock, decision-making is simpler than ever.
+                                We're offering unlimited API calls, ensuring seamless access to stock data without any interruptions, empowering better decisions smoothly and efficiently around the clock.
                             </CardContent>
                         </Card>
                         <Card>
