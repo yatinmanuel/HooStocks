@@ -1,4 +1,3 @@
-import { BackgroundGradient } from "@/components/ui/lil-glow.cuh";
 import {
     Card,
     CardTitle,
