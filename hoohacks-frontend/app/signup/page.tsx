@@ -51,6 +51,10 @@ export default function LoginPage() {
           <Input id="email" placeholder="john@hoohacks.io" type="email" />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
+          <Label htmlFor="email">Username</Label>
+          <Input id="username" placeholder="iamjohndoe" type="text" />
+        </LabelInputContainer>
+        <LabelInputContainer className="mb-4">
           <Label htmlFor="password">Password</Label>
           <Input id="password" placeholder="••••••••" type="password" />
         </LabelInputContainer>

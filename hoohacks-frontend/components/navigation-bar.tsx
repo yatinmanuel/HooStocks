@@ -142,7 +142,7 @@ export default function NavigationBar() {
                         </Link>
                         <Link href="/signup">
                             <Button variant="outline">
-                                Sign-up
+                                Sign Up
                             </Button>
                         </Link>
                         <ModeToggle/> 
