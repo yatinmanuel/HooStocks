@@ -13,6 +13,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
+import { AspectRatio } from "@/components/ui/aspect-ratio"
+
 import {
     Command,
     CommandDialog,
@@ -27,12 +29,13 @@ import {
 
 
 import {
-    Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetTitle,
-    SheetTrigger,
-} from "@/components/ui/sheet"
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 import { useEffect, useState } from "react";
 
@@ -73,17 +76,28 @@ export default function NavigationBar() {
                     {/* Fixed, had to remove the grid from the Command className -Yatin */}
 
                     <Command className="justify-items-center w-full">
-                        <CommandInput placeholder="Search Stock Ticker"/>
+                        <CommandInput placeholder="Search Stock Ticker" />
                         <CommandList></CommandList>
                     </Command>
                 </div>
                 <div className="lg:hidden inline-flex justify-end my-2 py-1">
                 </div>
                 <div className="hidden lg:inline-flex gap-2 justify-end my-2 py-1">
-                    <Avatar>
-                        <AvatarImage src="https://github.com/shadcn.png" />
-                        <AvatarFallback>CN</AvatarFallback>
-                    </Avatar>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button className="w-0 br-10 rounded-full">
+                                <Avatar>
+                                    <AvatarImage src="https://github.com/shadcn.png" />
+                                    <AvatarFallback>CN</AvatarFallback>
+                                </Avatar>
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent>
+                            <h1 className="p-2 font-bold">My Account</h1>
+                            <DropdownMenuItem>Settings</DropdownMenuItem>
+                            <DropdownMenuItem>Logout</DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
 
                     <ModeToggle />
                 </div>
