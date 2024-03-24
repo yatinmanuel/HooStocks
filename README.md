@@ -1,5 +1,7 @@
 # HooStocks 
 
+(https://yatin.lol/files/HooStocks.png)
+
 This project is a project to be submitted for the 2024 HooHacks hackathon, hosted by UVA. 
 
 ## What is it?
