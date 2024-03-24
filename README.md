@@ -4,7 +4,7 @@ This project is a project to be submitted for the 2024 HooHacks hackathon, hoste
 
 ## What is it?
 
-HooStocks is a stock-analyzing application, doing a range of things from analyzing stocks in real-time, unlimited API calling, and no rate-limiting.
+HooStocks is a stock-analyzing application, being able to analyze stocks in real-time while having unlimited API calling and no rate-limiting.
 
 It uses a LLM in order to provide a score for a user-inputted stock based on stock history, current price, P/E ratio, all-time highs and lows, and the stock company's value as a company amongst several other factors. 
 
