@@ -145,7 +145,7 @@ export default function Home() {
                     </Table> */}
 
                     <Tabs defaultValue="free" className="grid justify-items-center">
-                        <TabsList>
+                        <TabsList className="w-full">
                             <TabsTrigger value="free">Free</TabsTrigger>
                             <TabsTrigger value="pro">Pro</TabsTrigger>
                             <TabsTrigger value="ultimate">Ultimate</TabsTrigger>
