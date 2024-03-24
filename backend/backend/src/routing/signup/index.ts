@@ -5,7 +5,7 @@ import Webserver from "../../index"
 
 // Package Imports
 import bcrypt from 'bcrypt';
-
+import mongoose from 'mongoose';
 import User from '../../schemas/users';
 
 export default {
@@ -22,28 +22,17 @@ export default {
         if (!username || !password || !email || !firstname || !lastname) {
             return res.status(400).send({ message: 'bad request' });
         }
-        
-        console.log(username, password, email, firstname, lastname);
 
-        let user = await User.findOne({
-            username: username
-        });
+        const user = await User.findOne({ email: email } || { username: username });
 
         if (user) {
-            return res.status(400).send({ message: 'user already exists' });
+            return res.status(400).send({ message: 'email or username already exists' });
         }
 
-        user = await User.findOne({
-            email: email
-        });
-
-        if (user) {
-            return res.status(400).send({ message: 'email already exists' });
-        }
-
-        const hashedPassword = bcrypt.hash(password, 20);
+        const hashedPassword = await bcrypt.hash(password, 10);
         
         const new_user = new User({
+            _id: new mongoose.Types.ObjectId(),
             username: username,
             password: hashedPassword,
             email: email,
