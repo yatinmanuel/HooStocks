@@ -5,8 +5,8 @@ import Webserver from "../../index"
 
 // Package Imports
 import bcrypt from 'bcrypt';
-
-
+import mongoose from 'mongoose';
+import User from '../../schemas/users';
 
 export default {
     // The path of the route
@@ -16,44 +16,31 @@ export default {
         return res.status(401).send('forbidden');
     },
     // eslint-disable-next-line no-unused-vars
-    POST(req: Request, res: Response, client: Webserver) {
+    async POST(req: Request, res: Response, client: Webserver) {
         const { username, password, email, firstname, lastname } = req.body;
 
         if (!username || !password || !email || !firstname || !lastname) {
             return res.status(400).send({ message: 'bad request' });
         }
 
-        const hashedPassword = bcrypt.hash(password, 20);
-
-        let user = client.database.User.findOne({
-            where: {
-                username: username
-            }
-        });
+        const user = await User.findOne({ email: email } || { username: username });
 
         if (user) {
-            return res.status(400).send({ message: 'user already exists' });
+            return res.status(400).send({ message: 'email or username already exists' });
         }
 
-        user = client.database.User.findOne({
-           email: email
-        });
+        const hashedPassword = await bcrypt.hash(password, 10);
         
-        if (user) {
-            return res.status(400).send({ message: 'email already exists' });
-        }
-
-        client.database.User.create({
-            data: {
-                username: username,
-                password: hashedPassword,
-                email: email,
-                firstname: firstname,
-                lastname: lastname,
-                createdAt: new Date(),
-                updatedAt: new Date()
-            }
+        const new_user = new User({
+            _id: new mongoose.Types.ObjectId(),
+            username: username,
+            password: hashedPassword,
+            email: email,
+            firstname: firstname,
+            lastname: lastname
         });
+
+        await new_user.save();
 
         return res.status(200).send({ message: 'success' });
     },

@@ -54,11 +54,11 @@ export default function NavigationBar() {
             isActive: () => pathname === "/",
         }, {
             name: "About",
-            path: "#about",
+            path: "/#about",
             isActive: () => pathname === "/about",
         }, {
             name: "Pricing",
-            path: "#pricing",
+            path: "/#pricing",
             isActive: () => pathname === "/contact",
         }
     ]
