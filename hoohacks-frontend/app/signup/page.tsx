@@ -92,7 +92,7 @@ export default function LoginPage() {
           <Input
             id="confirmpassword"
             placeholder="••••••••"
-            type="confirmpassword"
+            type="password"
           />
         </LabelInputContainer>
         <Toaster />
