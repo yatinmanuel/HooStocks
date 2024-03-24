@@ -9,6 +9,9 @@ import {
     CardFooter
 } from "@/components/ui/card";
 
+import {useState} from 'react';
+
+
 import { Separator } from "@/components/ui/separator";
 import { BackgroundBeams } from "@/components/ui/background-gradient";
 
@@ -18,11 +21,34 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
+
+
+
 export default function LoginPage() {
+
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState(null);
+
+  function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+  }
+
+  const handleChange = event => {
+    setEmail(event.target.value);
+  };
+
+  
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        console.log("Submitted");
+
+        setError(null);
+
+        if (isValidEmail(email)) {
+          console.log('Submitted');
+        } else {
+          console.log('Email is invalid');
+        }
     }
 
     return (
@@ -48,7 +74,7 @@ export default function LoginPage() {
         </div>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="john@hoohacks.io" type="email" />
+          <Input id="email" placeholder="john@hoohacks.io" type="email" onChange={handleChange} />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Username</Label>
