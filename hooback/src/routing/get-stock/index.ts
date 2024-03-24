@@ -22,7 +22,7 @@ export default {
         
         const api_key = process.env.API_KEY as string;
 
-        const data = await fetch(`https://api.polygon.io/v2/aggs/ticker/${stock_short_name}/range/1/day/${date}/${date}?adjusted=true&sort=asc&limit=120&apiKey=${encodeURI(api_key)}`, {
+        const data = await fetch(`https://api.polygon.io/v2/aggs/ticker/${stock_short_name}/prev?adjusted=true&apiKey=${encodeURI(api_key)}`, {
             method: 'GET',
         headers: {
             'Content-Type': 'application/json',
