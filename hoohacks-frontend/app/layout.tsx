@@ -11,6 +11,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 import NavigationBar from "@/components/navigation-bar";
 import Footer from "@/components/footer";
+import { Toaster } from "@/components/ui/sonner"
 
 
 export default function RootLayout({
