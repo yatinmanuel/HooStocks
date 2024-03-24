@@ -46,8 +46,8 @@ export default function Home() {
                         </Card>
                         <Card>
                             <CardHeader>
-                                <CardTitle>Card Title</CardTitle>
-                                <CardDescription>Card Description</CardDescription>
+                                <CardTitle>Unlimited API Calls</CardTitle>
+                                <CardDescription>zero-interruption</CardDescription>
                             </CardHeader>
                             <CardContent>
                                 Ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.

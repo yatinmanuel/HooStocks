@@ -61,8 +61,8 @@ export default function NavigationBar() {
 
 
     return (
-        <nav className={(isSolid ? "shadow-gray-800 bg-neutral-200 dark:bg-neutral-900 bg-opacity-20 " : "") + "px-12 transition-all duration-300 fixed top-0 z-20 pt-2 pb-3 w-full overflow-hidden"}>
-            <div className="grid mt-3 mb-1 grid-cols-2 lg:grid-cols-3 w-full">
+        <nav className={(isSolid ? "shadow-gray-800 bg-neutral-200 dark:bg-neutral-900 bg-opacity-20 " : "") + "px-12 transition-all duration-300 fixed top-0 z-20 pt-2 pb-3 w-full "}>
+            <div className="grid mt-3 mb-1 grid-cols-2 lg:grid-cols-3">
                 <div className="inline-flex my-2">
                     <Link href="/" className="inline-flex">
                         <Image src="/hoohacks-owl-logo.png" alt="HooHacks" width={45} height={40} className="mr-2 bg-black dark:bg-transparent px-2 py-2 rounded-md" />
