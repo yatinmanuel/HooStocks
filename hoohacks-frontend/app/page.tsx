@@ -41,11 +41,11 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4 lg:mt-8">
                 <Card>
                     <CardHeader>
-                        <CardTitle>Card Title</CardTitle>
-                        <CardDescription>Card Description</CardDescription>
+                        <CardTitle>Real Time Analytics</CardTitle>
+                        <CardDescription>monitor your assets by the minute</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        Ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. 
+                    Time is everything, our platform provides instantaneous updates on market movements, stock performance, and key events that impact your investments. 
                     </CardContent>
                 </Card>
                 <Card>
@@ -59,11 +59,11 @@ export default function Home() {
                 </Card>
                 <Card>
                     <CardHeader>
-                        <CardTitle>Card Title</CardTitle>
-                        <CardDescription>Card Description</CardDescription>
+                        <CardTitle>AI Analysis</CardTitle>
+                        <CardDescription>fine-tuned scoring engine</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        Ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. 
+                    Our AI engine collects and processes vast amounts of financial data, including historical performance, market trends, company fundamentals, and macroeconomic indicators.
                     </CardContent>
                 </Card>
             </div>
