@@ -11,6 +11,7 @@ import {
 
 import {useState} from 'react';
 
+import Navbar from "@/components/navigation-bar";
 
 import { Separator } from "@/components/ui/separator";
 import { BackgroundBeams } from "@/components/ui/background-gradient";
@@ -55,6 +56,8 @@ export default function LoginPage() {
     }
 
     return (
+    <>
+        <Navbar />
         <div className="relative h-screen grid py-52 justify-items-center">
             <div className="max-w-md w-full mx-auto rounded-none z-20 md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
@@ -108,6 +111,7 @@ export default function LoginPage() {
     </div>
             <BackgroundBeams />
         </div>
+    </>
     )
 }
 

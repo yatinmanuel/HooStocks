@@ -7,6 +7,7 @@ import {
     CardFooter
 } from "@/components/ui/card";
 
+import Navbar from "@/components/navigation-bar";
 import { Separator } from "@/components/ui/separator";
 import { BackgroundBeams } from "@/components/ui/background-gradient";
 
@@ -16,6 +17,8 @@ import { Button } from "@/components/ui/button";
 
 export default function LoginPage() {
     return (
+    <>
+        <Navbar />
         <div className="relative h-screen grid py-52 justify-items-center">
                 <Card className="px-6 py-6  relative z-10">
                     <CardHeader>
@@ -38,5 +41,6 @@ export default function LoginPage() {
                 </Card>
             <BackgroundBeams />
         </div>
+    </>
     )
 }

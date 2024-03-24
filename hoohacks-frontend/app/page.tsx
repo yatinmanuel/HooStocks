@@ -6,6 +6,8 @@ export const metadata: Metadata = {
     description: "",
 }
 
+import Navbar from "@/components/navigation-bar";
+
 import {
     Table,
     TableBody,
@@ -36,6 +38,8 @@ import { AuroraBorealis } from "@/components/ui/aurora-borealis";
 
 export default function Home() {
     return (
+    <>
+        <Navbar />
         <main>
             <AuroraBorealis>
                 <div className="grid justify-items-center">
@@ -153,5 +157,6 @@ export default function Home() {
                 </div>
             </div>
         </main>
+    </>
     );
 }
