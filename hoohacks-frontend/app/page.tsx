@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -31,7 +32,7 @@ export default function Home() {
                         <p className="text-2xl text-[#9e9e9e] dark:text-[#dfe9e9]">stock analysis platform</p>
                     </div>
                 </AuroraBorealis>
-                <div className="px-6 py-6 lg:px-12 lg:py-12">
+                <div id="about" className="px-6 py-6 lg:px-12 lg:py-12">
                     <h1 className="text-4xl text-primary">Welcome to HooStocks</h1>
                     <p className="text-lg text-[#9e9e9e] dark:text-[#dfe9e9]">The future of investing is here.</p>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4 lg:mt-8">
@@ -46,11 +47,11 @@ export default function Home() {
                         </Card>
                         <Card>
                             <CardHeader>
-                                <CardTitle>Card Title</CardTitle>
-                                <CardDescription>Card Description</CardDescription>
+                                <CardTitle>Simple Dashboard</CardTitle>
+                                <CardDescription>elegant and minimal for easy control</CardDescription>
                             </CardHeader>
                             <CardContent>
-                                Ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
+                                With a straight forward dashboard and everything you need to know about your stock, decision-making is simpler than ever.
                             </CardContent>
                         </Card>
                         <Card>
@@ -75,7 +76,7 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="py-6 lg:py-12">
+                    <div id="pricing" className="py-6 lg:py-12">
                         <h1 className="text-4xl text-primary">Pricing</h1>
                         <p className="text-lg text-[#9e9e9e] dark:text-[#dfe9e9]">The future of investing is here.</p>
 
@@ -92,7 +93,9 @@ export default function Home() {
                                             <li> 5GB of storage space </li>
                                             <li> Up to 5 users </li>
                                             <li> Full email support </li>
-                                            <Button className="grid justify-items-center w-full mt-6">Buy Now</Button>
+                                            <Link href="/login">
+                                                <Button className="grid justify-items-center w-full mt-6">Buy Now</Button>
+                                            </Link>
                                         </CardContent>
                                     </div>
                                 </Card>
@@ -110,7 +113,9 @@ export default function Home() {
                                             <li> 10GB of storage space </li>
                                             <li> Up to 10 users </li>
                                             <li> Full email support </li>
-                                            <Button className="grid justify-items-center w-full mt-6">Buy Now</Button>
+                                            <Link href="/login">
+                                                <Button className="grid justify-items-center w-full mt-6">Buy Now</Button>
+                                            </Link>
                                         </CardContent>
                                     </div>
                                 </Card>
@@ -128,7 +133,9 @@ export default function Home() {
                                             <li> 20GB of storage space </li>
                                             <li> Up to 20 users </li>
                                             <li> Full email support </li>
-                                            <Button className="grid justify-items-center w-full mt-6">Buy Now</Button>
+                                            <Link href="/login">
+                                                <Button className="grid justify-items-center w-full mt-6">Buy Now</Button>
+                                            </Link>
                                         </CardContent>
                                     </div>
                                 </Card>
@@ -146,7 +153,9 @@ export default function Home() {
                                             <li> 30GB of storage space </li>
                                             <li> Up to 30 users </li>
                                             <li> Full email support </li>
-                                            <Button className="grid justify-items-center w-full mt-6">Buy Now</Button>
+                                            <Link href="/login">
+                                                <Button className="grid justify-items-center w-full mt-6">Buy Now</Button>
+                                            </Link>
                                         </CardContent>
                                     </div>
                                 </Card>
