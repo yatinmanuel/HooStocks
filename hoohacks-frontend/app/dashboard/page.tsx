@@ -15,17 +15,20 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
+import { toast } from "sonner";
+
 export default function Dashboard() {
         
     const [ stock, setStock ] = useState<any>(null);
     
     async function GetStock(stock_short_name: string) {
-        await axios.post('http://localhost:8080/get-stock', {
-            stock_short_name: stock_short_name
+        await axios.post('http://127.0.0.1:8080/get-stock', {
+            stock_short_name: stock_short_name.toUpperCase()
         }).then((response) => {
             setStock(response.data);
         }).catch((error) => {
-            console.error(error);
+            toast("Error fetching stock data");
+            console.log(error);
         });
 
     }
