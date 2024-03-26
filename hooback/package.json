@@ -22,9 +22,13 @@
     "express": "^4.18.2",
     "express-validator": "^7.0.1",
     "mongoose": "^8.2.3",
+<<<<<<< HEAD
     "nodemon": "^3.1.0",
     "openai": "^4.0.0",
     "ts-node": "^10.9.2"
+=======
+    "openai": "^4.0.0"
+>>>>>>> 7fbf647640733aff0224aade16aa9ded28c47260
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",

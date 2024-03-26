@@ -13,7 +13,10 @@ HooStocks is a stock-analyzing application, being able to analyze stocks in real
 It uses a LLM in order to provide a score for a user-inputted stock based on stock history, current price, P/E ratio, all-time highs and lows, and the stock company's value as a company amongst several other factors. 
 
 ## Team Members
+<<<<<<< HEAD
 - Sebastian Luna
+=======
+>>>>>>> 7fbf647640733aff0224aade16aa9ded28c47260
 - Yatin Jason Manuel
 - Dang Le
 - Jasmeet Bhamra
@@ -54,4 +57,7 @@ We chose to do this as we wanted to develop an application that would be able to
 #### APIs
 - [OpenAI](https://platform.openai.com/) (Generative Text and Stock Analysis)
 - [polygon.io](https://polygon.io/) (Requesting Stock Information)
+<<<<<<< HEAD
 # hoohacks-branch
+=======
+>>>>>>> 7fbf647640733aff0224aade16aa9ded28c47260

@@ -39,8 +39,11 @@ import {
 
 import { useEffect, useState } from "react";
 
+<<<<<<< HEAD
 import Axios from "axios";
 
+=======
+>>>>>>> 7fbf647640733aff0224aade16aa9ded28c47260
 export default function NavigationBar() {
     const pathname = usePathname();
 
@@ -61,7 +64,11 @@ export default function NavigationBar() {
             window.removeEventListener("scroll", toggleVisability);
         }
     }, [])
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 7fbf647640733aff0224aade16aa9ded28c47260
     return (
         <nav className={(isSolid ? "shadow-gray-800 bg-neutral-200 dark:bg-neutral-900 bg-opacity-20 " : "") + "px-12 transition-all duration-300 fixed top-0 z-20 pt-2 pb-3 w-full "}>
             <div className="grid mt-3 mb-1 grid-cols-2 lg:grid-cols-3">
@@ -72,6 +79,18 @@ export default function NavigationBar() {
                     </Link>
                 </div>
                 <div className="inline-flex grid justify-items-center ">
+<<<<<<< HEAD
+=======
+
+                    {/* HOW DO I MAKE THE COMMAND BAR THE FULL SIZE OF THE PARENT DIV */}
+
+                    {/* Fixed, had to remove the grid from the Command className -Yatin */}
+
+                    <Command className="justify-items-center w-full">
+                        <CommandInput placeholder="Search Stock Ticker" />
+                        <CommandList></CommandList>
+                    </Command>
+>>>>>>> 7fbf647640733aff0224aade16aa9ded28c47260
                 </div>
                 <div className="lg:hidden inline-flex justify-end my-2 py-1">
                 </div>

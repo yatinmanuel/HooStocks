@@ -13,15 +13,19 @@ import {
 import axios from "axios";
 
 import { useEffect, useState } from "react";
+<<<<<<< HEAD
 import { Button } from "@/components/ui/button";
 
 import { toast } from "sonner";
+=======
+>>>>>>> 7fbf647640733aff0224aade16aa9ded28c47260
 
 export default function Dashboard() {
         
     const [ stock, setStock ] = useState<any>(null);
     
     async function GetStock(stock_short_name: string) {
+<<<<<<< HEAD
         await axios.post('http://127.0.0.1:8080/get-stock', {
             stock_short_name: stock_short_name.toUpperCase()
         }).then((response) => {
@@ -29,20 +33,34 @@ export default function Dashboard() {
         }).catch((error) => {
             toast("Error fetching stock data");
             console.log(error);
+=======
+        await axios.post('http://localhost:8080/get-stock', {
+            stock_short_name: stock_short_name
+        }).then((response) => {
+            setStock(response.data);
+        }).catch((error) => {
+            console.error(error);
+>>>>>>> 7fbf647640733aff0224aade16aa9ded28c47260
         });
 
     }
 
+<<<<<<< HEAD
 
     useEffect(() => {
         GetStock('AAPL');
         console.log("running")
+=======
+    useEffect(() => {
+        GetStock('AAPL');
+>>>>>>> 7fbf647640733aff0224aade16aa9ded28c47260
     }, []);
 
     return (
         <>
             <NavUser />
             <main className="h-screen mt-12 px-6 py-6 lg:py-12 lg:px-12">
+<<<<<<< HEAD
                     <form className="w-full inline-flex gap-4">
                         <input id="stock" type="text" className="w-full p-2 border-2 border-gray-300 rounded-lg" 
                         onSubmit={(e) => {
@@ -57,6 +75,8 @@ export default function Dashboard() {
                             GetStock(stock.value);}
                         }>Search</Button>
                     </form>
+=======
+>>>>>>> 7fbf647640733aff0224aade16aa9ded28c47260
                 <div className="my-4">
                     <h1 className="font-bold text-4xl ">Dashboard</h1>
                 </div>
