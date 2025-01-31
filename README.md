@@ -54,7 +54,3 @@ We chose to do this as we wanted to develop an application that would be able to
 #### APIs
 - [OpenAI](https://platform.openai.com/) (Generative Text and Stock Analysis)
 - [polygon.io](https://polygon.io/) (Requesting Stock Information)
-<<<<<<< HEAD
-# hoohacks-branch
-=======
->>>>>>> 7fbf647640733aff0224aade16aa9ded28c47260
